@@ -1,3 +1,10 @@
+// TO DO LIST:
+
+// 1) fixare linea 75 quando non c'è la casella.
+// 2) fixare funzionamento "LA PARTITA E' FINITA, linea 58
+// 3) impedire funzionamento Pesca un numero se non ci sono card.
+// 4) aggiungere vittoria quando una "card" ha tutte le class "casellina" "extracted"
+
 // FUNZIONE TABELLA TOMBOLA
 const generateMainTable = function () {
   const tabellone = document.querySelector(".tabellone");
@@ -57,6 +64,8 @@ const btnPesca = document
 const changeNumber = (randNum) => {
   if (usedIndex.length === 90) {
     return alert("LA PARTITA E' FINITA");
+  } else {
+    console.log(usedIndex.length);
   }
 
   // cambio stile NUMERO ESTRATTO
@@ -71,9 +80,6 @@ const changeNumber = (randNum) => {
   // cambio stile NUMERO CASELLA
   const cardNumber = document.querySelectorAll(".casellina");
   cardNumber[randNum].classList.add("extracted");
-  // if (cardNumber.innerText === randNum + 1) {
-  //   cardNumber.classList.add("extracted");
-  // }
 };
 
 // PULSANTE AGGIUNGI CARTELLE legato a INPUT
