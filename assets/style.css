@@ -28,7 +28,7 @@ section {
 }
 
 .tabellone {
-  width: 35%;
+  width: 33%;
   background-color: #b69d74;
 
   display: flex;
@@ -43,6 +43,23 @@ section {
   flex-wrap: nowrap;
   align-items: center;
   margin-inline: 50px;
+}
+#extracted {
+}
+#extracted.hasNum {
+  background-color: #ddc3a1;
+  font-size: 25px;
+  height: 75px;
+  width: 75px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: center;
+  border: 2px solid red;
+  margin: 5px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px darkslategray;
+  cursor: pointer;
 }
 .btn {
   margin-block: 10px;
@@ -104,6 +121,17 @@ section {
   height: 50px;
   width: 50px;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgb(0, 0, 0);
+  margin: 5px;
+}
+.casellina.extracted {
+  background-color: #f58b00;
+  font-size: 25px;
+  height: 50px;
+  width: 50px;
   display: flex;
   align-items: center;
   justify-content: center;

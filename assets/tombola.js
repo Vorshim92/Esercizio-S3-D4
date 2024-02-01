@@ -22,7 +22,6 @@ const generateCard = (inputNumber) => {
     const divCard = document.createElement("div");
     divCard.className = "card";
     let usedNumbers = [];
-    console.log(usedNumbers);
     for (let i = 0; i < 24; i++) {
       const card = document.createElement("div");
       card.className = "casellina";
@@ -44,23 +43,38 @@ let usedIndex = [];
 const btnPesca = document
   .getElementById("btnPesca")
   .addEventListener("click", function (e) {
-    const numTombola = document.querySelectorAll(".numTabella");
-    console.log(usedIndex.length);
-    console.log(numTombola.length);
-    if (usedIndex.length === numTombola.length) {
-      return alert("LA PARTITA E' FINITA");
-    }
     let randNum;
 
     do {
-      randNum = Math.floor(Math.random() * numTombola.length);
+      randNum = Math.floor(Math.random() * 90);
     } while (usedIndex.includes(randNum));
     usedIndex.push(randNum);
-    numTombola[randNum].classList.add("selected");
-    return randNum;
+
+    return changeNumber(randNum);
   });
 
 // NUMERO ESTRATTO FUNZIONE
+const changeNumber = (randNum) => {
+  if (usedIndex.length === 90) {
+    return alert("LA PARTITA E' FINITA");
+  }
+
+  // cambio stile NUMERO ESTRATTO
+  const numberExtracted = document.getElementById("extracted");
+  numberExtracted.classList.add("hasNum");
+  numberExtracted.innerText = randNum + 1;
+
+  // cambio stile NUMERO TABELLA
+  const numTombola = document.querySelectorAll(".numTabella");
+  numTombola[randNum].classList.add("selected");
+
+  // cambio stile NUMERO CASELLA
+  const cardNumber = document.querySelectorAll(".casellina");
+  cardNumber[randNum].classList.add("extracted");
+  // if (cardNumber.innerText === randNum + 1) {
+  //   cardNumber.classList.add("extracted");
+  // }
+};
 
 // PULSANTE AGGIUNGI CARTELLE legato a INPUT
 const btnList = document
