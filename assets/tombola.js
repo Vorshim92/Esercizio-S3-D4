@@ -1,3 +1,4 @@
+// FUNZIONE TABELLA TOMBOLA
 const generateMainTable = function () {
   const tabellone = document.querySelector(".tabellone");
 
@@ -12,6 +13,8 @@ const generateMainTable = function () {
     tabellone.innerHTML += `<div class="numTabella"><span class="numTab">${i}</span></div>`;
   }
 };
+
+// GENERATORE CARTELLE UTENTE
 const generateCard = (inputNumber) => {
   const cardTable = document.querySelector(".card-table");
 
@@ -26,7 +29,7 @@ const generateCard = (inputNumber) => {
       let randNum;
 
       do {
-        randNum = Math.floor(Math.random() * 90) + 1;
+        randNum = Math.floor(Math.random() * 90);
       } while (usedNumbers.includes(randNum));
       usedNumbers.push(randNum);
       card.innerText = randNum;
@@ -36,6 +39,30 @@ const generateCard = (inputNumber) => {
   }
 };
 
+// PULSANTE PESCA UN NUMERO
+let usedIndex = [];
+const btnPesca = document
+  .getElementById("btnPesca")
+  .addEventListener("click", function (e) {
+    const numTombola = document.querySelectorAll(".numTabella");
+    console.log(usedIndex.length);
+    console.log(numTombola.length);
+    if (usedIndex.length === numTombola.length) {
+      return alert("LA PARTITA E' FINITA");
+    }
+    let randNum;
+
+    do {
+      randNum = Math.floor(Math.random() * numTombola.length);
+    } while (usedIndex.includes(randNum));
+    usedIndex.push(randNum);
+    numTombola[randNum].classList.add("selected");
+    return randNum;
+  });
+
+// NUMERO ESTRATTO FUNZIONE
+
+// PULSANTE AGGIUNGI CARTELLE legato a INPUT
 const btnList = document
   .getElementById("btnCard")
   .addEventListener("click", function (e) {
@@ -46,6 +73,7 @@ const btnList = document
     inputNumber.value = "";
   });
 
+// GENERAZIONE TABELLA TOMBOLA
 window.onload = function () {
   generateMainTable();
 };
