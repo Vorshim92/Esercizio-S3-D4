@@ -1,0 +1,99 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#title {
+  text-align: center;
+}
+
+.main-table {
+  width: 100%;
+  width: 100%;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.tabellone {
+  width: 35%;
+  background-color: #b69d74;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.btn {
+  margin-block: 10px;
+}
+
+#randNum {
+}
+.numTabella {
+  background-color: #ddc3a1;
+  font-size: 25px;
+  height: 75px;
+  width: 75px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: center;
+  border: 2px solid red;
+  margin: 5px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px darkslategray;
+  cursor: pointer;
+}
+.numTab {
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+.card-table {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  background-color: rgb(12, 156, 43);
+}
+.card {
+  background-color: #ffffff;
+  font-size: 25px;
+  width: 32%;
+  height: 200px;
+  border: 2px solid rgb(0, 0, 0);
+  margin: 5px;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: space-between;
+}
+.casellina {
+  background-color: #ddc3a1;
+  font-size: 25px;
+  height: 50px;
+  width: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgb(0, 0, 0);
+  margin: 5px;
+}
