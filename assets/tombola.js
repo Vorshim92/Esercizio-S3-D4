@@ -79,7 +79,19 @@ const changeNumber = (randNum) => {
 
   // cambio stile NUMERO CASELLA
   const cardNumber = document.querySelectorAll(".casellina");
-  cardNumber[randNum].classList.add("extracted");
+
+  cardNumber.forEach((e) => {
+    console.log(e.innerText);
+    if (e.innerText === (randNum + 1).toString()) {
+      e.classList.add("extracted");
+    }
+    // if (e.innerText === randNum) {
+    //   e.classList.add("extracted");
+    // }
+  });
+  // if (randNum === cardNumber[randNum].innerText) {
+  //   cardNumber[randNum].classList.add("extracted");
+  // }
 };
 
 // PULSANTE AGGIUNGI CARTELLE legato a INPUT
